@@ -20,8 +20,14 @@ function engine(app) {
                     // Get the result of the function, either async or no.
                     if (rendered.constructor.name === "AsyncFunction") {
                         res = await rendered(options);
+                    } else if (rendered.constructor.name === "Promise") {
+                        res = await rendered;
                     } else {
                         res = rendered(options);
+                    }
+
+                    if (res?.constructor?.name === "Promise") {
+                        res = await res;
                     }
 
                     if (res?.constructor?.name === "TemplateResult") {
@@ -35,7 +41,6 @@ function engine(app) {
                     return cb(new Error(`Template was of type ${typeof rendered}, must be a string, promise, or function.`));
             }
         } catch(err) {
-            console.error(err);
             cb(err);
         }
     });
