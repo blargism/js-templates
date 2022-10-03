@@ -1,10 +1,10 @@
-const { TemplateResult } = require("./lib-html");
+const { html, unsafe, TemplateResult } = require("./lib-html");
 
 /**
  * A blazing fast and pasionately unopinionated JS template based template engine.
  * @param app The Express application object.
  */
-module.exports = function(app) {
+function engine(app) {
     // Register the engine to look for .js files
     app.engine('js', async (path, options, cb) => {
         try {
@@ -39,4 +39,11 @@ module.exports = function(app) {
             cb(err);
         }
     });
+}
+
+module.exports = {
+    engine,
+    html,
+    TemplateResult,
+    unsafe,
 }
