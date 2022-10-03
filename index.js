@@ -1,4 +1,4 @@
-const { html, unsafe, TemplateResult } = require("./lib-html");
+const { html, unsafe, TemplateResult } = require("./lib/lib-html");
 
 /**
  * A blazing fast and pasionately unopinionated JS template based template engine.
