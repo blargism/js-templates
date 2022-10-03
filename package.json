@@ -1,0 +1,24 @@
+{
+  "name": "js-template",
+  "version": "0.0.1",
+  "description": "A blazing fast, zero dependency, pasionately unopinionated JS template based template engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blargism/jst-emplate.git"
+  },
+  "keywords": [
+    "express",
+    "templates",
+    "engine"
+  ],
+  "author": "Joe Mills",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blargism/jst-emplate/issues"
+  },
+  "homepage": "https://github.com/blargism/jst-emplate#readme"
+}
