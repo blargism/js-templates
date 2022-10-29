@@ -15,6 +15,8 @@ function engine(app) {
             switch(typeof rendered) {
                 case "string":
                     return cb(null, rendered);
+                case "number":
+                    return cb(null, rendered);
                 case "function":
                     let res;
                     // Get the result of the function, either async or no.
