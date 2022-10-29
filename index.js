@@ -36,6 +36,8 @@ function engine(app) {
                         return cb(null, await res.render());
                     } else if (typeof res === "string") {
                         return cb(null, res);
+                    } else if (typeof res === "number") {
+                        return cb(null, res + "");
                     } else {
                         return cb(new Error(`Template was of type ${typeof rendered}, must be a string, promise, or function.`));
                     }
