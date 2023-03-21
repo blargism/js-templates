@@ -3,7 +3,7 @@ type engine = (app: Express) => void;
 type TemplateResult = {
   strings: string[];
   args: any[];
-  options: Options;
+  options: any;
   render: () => string;
   parseTemplate: (template: any) => string;
 };
