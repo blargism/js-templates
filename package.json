@@ -1,7 +1,7 @@
 {
   "name": "js-template",
   "version": "0.0.1",
-  "description": "A blazing fast, zero dependency, pasionately unopinionated JS template based template engine.",
+  "description": "A blazing fast, zero dependency, pasionately unopinionated JS template based template engine inspired by 'lit-html'.",
   "main": "index.js",
   "scripts": {
     "test": "npx mocha"

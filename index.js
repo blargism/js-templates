@@ -9,7 +9,7 @@ function engine(app) {
     app.engine('js', async (path, options, cb) => {
         try {
             // find the requested template
-            let rendered = require(path);
+            let rendered = await import(path);
 
             // check the type of the returned template, it can be a string or a function.
             switch(typeof rendered) {
