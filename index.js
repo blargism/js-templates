@@ -11,6 +11,11 @@ function engine(app) {
             // find the requested template
             let rendered = await import(path);
 
+            // If the consuming lib is using ESM, do a bit of checking to make sure we have the template function
+            if (typeof rendered !== 'function' && typeof rendered !== 'string' && typeof rendered !== 'number' && rendered.default) {
+                rendered = rendered.default;
+            }
+
             // check the type of the returned template, it can be a string or a function.
             switch(typeof rendered) {
                 case "string":
